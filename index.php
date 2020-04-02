@@ -12,7 +12,7 @@ $items = get_html_item();
                 <div class="entry-list">
                     <?php
                     // Alert message for when a record has been edited and created respectively.
-                     if ($_GET['success'] == 'edit') {
+                     if (isset($_GET['success']) && $_GET['success'] == 'edit') {
                         echo "<div class='alert alert-success' role='alert'>Your entry has been edited successfully!</div>";
                     } elseif (isset($_GET['success'])) {
                         echo "<div class='alert alert-success' role='alert'>Your entry has been recorded successfully!</div>";

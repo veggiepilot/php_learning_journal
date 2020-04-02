@@ -5,8 +5,11 @@ function detail() {
 
     include('connection.php');
 
+    //Sanitizing input data before sending to database.
+    $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+
     //Statement to choose the appropriate data to get from the database.
-    switch($_GET['id']) {
+    switch($id) {
 
         case 1:
             $offsetCondition = " OFFSET 1";         

@@ -4,13 +4,16 @@
 if (isset($_GET['id'])) {
     include('inc/connection.php');
 
+    //Sanitizing input data before sending to database.
+    $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+
     // If conditions are met, the database is queried.
     try {
 
         $sql = "DELETE FROM entries WHERE id = ? ";
 
         $stmt = $db->prepare($sql);
-        $stmt->bindParam(1, $_GET['id'], PDO::PARAM_INT);
+        $stmt->bindParam(1, $id, PDO::PARAM_INT);
         $stmt->execute();
 
     } catch (Exception $e) {
