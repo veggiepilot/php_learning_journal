@@ -2,7 +2,7 @@
 include('inc/header.php');
 include('inc/functions.php');
 
-//Calling the function that will show 4 entries sorted by date in descenting order. 
+//Calling the function that will show all entries sorted by date in descenting order. 
 $items = get_html_item();
 
 ?>
