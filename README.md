@@ -1,4 +1,4 @@
-# php_learning_journal
+#Learning Journal
  
  Personal Learning Journal
 
